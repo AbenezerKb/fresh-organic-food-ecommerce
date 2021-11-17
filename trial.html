@@ -1,0 +1,33 @@
+<html>
+
+<center>
+<h2>Submit Data Without Reloading (JS, PHP)</h2>
+
+
+
+<form action="" onsubmit="return submitCouponCode();">
+    <input type="text" id="couponCode">
+    <input type="submit" value="Apply">
+ </form>
+
+<script type="text/JavaScript">
+
+    function submitCouponCode()
+    {
+        var textbox = document.getElementById("couponCode");
+        var url ="trial2.php?q=" + encodeURIComponent(textbox.value);
+            console.log(textbox.value);
+        // get the URL
+        http = new XMLHttpRequest(); 
+        http.open("GET", url, true);
+        http.send(null);
+        console.log(textbox.value);
+    
+        // prevent form from submitting
+        return false;
+    }
+    
+    </script>
+</center>
+
+</html>
